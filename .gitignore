@@ -129,10 +129,15 @@ dmypy.json
 .pyre/
 
 # Data Science Custom
-data/
+data/*
+!data/raw/
+!data/processed/
+data/raw/*
+data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
-models/
+
+models/*
 !models/.gitkeep
 
 # IDEs
