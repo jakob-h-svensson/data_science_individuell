@@ -16,9 +16,9 @@ st.set_page_config(page_title="Data Science Project: Ekonomiresan", layout="wide
 
 # --- Pathing --- #
 
-DATA_PATH = "data_science_project/data"
-RAW_DATA_PATH = "data_science_project/raw_data"
-PROCESSED_DATA_PATH = "data_science_project/processed_data"
+DATA_PATH = "data"
+RAW_DATA_PATH = "data/raw"
+PROCESSED_DATA_PATH = "data/processed"
 
 
 # Defining tickers/stocks
