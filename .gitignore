@@ -143,3 +143,6 @@ models/*
 # IDEs
 .vscode/
 .idea/
+
+# Localdata
+.Localdata/
