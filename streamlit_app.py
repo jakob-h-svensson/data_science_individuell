@@ -14,6 +14,13 @@ st.set_page_config(page_title="Data Science Project: Ekonomiresan", layout="wide
 
 # --- Settings and data --- #
 
+# --- Pathing --- #
+
+DATA_PATH = "data_science_project/data"
+RAW_DATA_PATH = "data_science_project/raw_data"
+PROCESSED_DATA_PATH = "data_science_project/processed_data"
+
+
 # Defining tickers/stocks
 omxs30_stocks = {
     "ALFA.ST": "Alfa Laval",
@@ -198,8 +205,8 @@ def build_index(df):
 omx_index = build_index(omx_prices)
 nasdaq_index = build_index(nasdaq_prices)
 
-omx_index.to_csv("omx_index.csv", index=False)
-nasdaq_index.to_csv("nasdaq_index.csv", index=False)
+omx_index.to_csv(f"{PROCESSED_DATA_PATH}/omx_index.csv", index=False)
+nasdaq_index.to_csv(f"{PROCESSED_DATA_PATH}/nasdaq_index.csv", index=False)
 
 omx_index['Market'] = 'Sverige'
 nasdaq_index['Market'] = 'USA'
@@ -216,7 +223,7 @@ nasdaq_index_last_30_days_change = last_30_days_change(nasdaq_index)
 
 #--- Get events ---#
 
-events_df = pd.read_csv("events.csv")
+events_df = pd.read_csv(f"{PROCESSED_DATA_PATH}/events.csv")
 events_df["date"] = pd.to_datetime(events_df["date"])
 events_df = events_df.sort_values("date", ascending=False)
 
